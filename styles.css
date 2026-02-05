@@ -443,6 +443,10 @@ h6 {
     box-shadow: var(--shadow-md);
 }
 
+.mobile-only {
+    display: none;
+}
+
 .mobile-menu-btn {
     display: none;
     width: 40px;
@@ -523,7 +527,7 @@ h6 {
 .hero-title {
     font-size: clamp(3rem, 6vw, 5.5rem);
     font-weight: 700;
-    line-height: 1.05;
+    line-height: 1.2;
     color: #1a1a1a;
     margin: 0;
     letter-spacing: -0.02em;
@@ -924,13 +928,19 @@ section {
 @media (max-width: 640px) {
     .prototype-collage {
         grid-template-columns: 1fr;
-        gap: var(--spacing-3);
+        grid-auto-rows: auto;
+        gap: var(--spacing-4);
+    }
+
+    .collage-item {
+        aspect-ratio: 4/3;
+        grid-row: span 1 !important;
+        grid-column: span 1 !important;
     }
 
     .item-tall,
-    .item-wide {
-        grid-row: span 1;
-        grid-column: span 1;
+    .item-wide,
+    .item-feature {
         aspect-ratio: 4/3;
     }
 }
@@ -1132,6 +1142,11 @@ section {
 .fundraiser {
     background: var(--gradient-primary);
     color: var(--text-light);
+    border-radius: var(--radius-3xl);
+    margin: var(--spacing-16) auto var(--spacing-24);
+    padding: var(--spacing-16) 0;
+    max-width: 1200px;
+    width: calc(100% - var(--spacing-12));
 }
 
 .fundraiser-wrapper {
@@ -1656,8 +1671,14 @@ section {
         display: flex;
     }
 
+    .hero {
+        min-height: auto;
+        padding-bottom: var(--spacing-20);
+    }
+
     .hero-title {
-        font-size: var(--font-size-3xl);
+        font-size: clamp(2rem, 8vw, 2.5rem);
+        line-height: 1.3;
     }
 
     .section-title {
@@ -1673,6 +1694,61 @@ section {
 
     .upi-container {
         flex-direction: column;
+        width: 100%;
+    }
+
+    .upi-qr {
+        width: 100% !important;
+        height: auto !important;
+        min-width: unset !important;
+        max-width: 300px;
+        aspect-ratio: 1/1;
+    }
+
+    .upi-id-container {
+        width: 100%;
+        padding: var(--spacing-4);
+        gap: var(--spacing-3);
+    }
+
+    .upi-id {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+    }
+
+    .donation-section {
+        padding: var(--spacing-8) var(--spacing-4);
+        width: calc(100% - var(--spacing-4));
+        margin: 0 auto;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .fundraiser-title {
+        font-size: clamp(1.5rem, 8vw, 2.25rem);
+        margin-bottom: var(--spacing-4);
+        padding: 0 var(--spacing-6);
+        text-align: center;
+    }
+
+    .fundraiser-description {
+        font-size: var(--font-size-base);
+        padding: 0 var(--spacing-8);
+        margin-bottom: var(--spacing-10);
+        text-align: center;
+    }
+
+    .upi-instruction {
+        font-size: var(--font-size-base);
+        text-align: center;
+        margin-top: var(--spacing-4);
+        padding: 0 var(--spacing-4);
+    }
+
+    .hero-bottom {
+        display: none;
+    }
+
+    .nav-right {
+        background: linear-gradient(to bottom, var(--bg-primary) 80%, rgba(255, 255, 255, 0.95));
     }
 
     .leaderboard-section {
@@ -1688,6 +1764,18 @@ section {
         flex-direction: column;
         gap: var(--spacing-4);
         text-align: center;
+        padding-bottom: var(--spacing-8);
+    }
+
+    .mobile-only {
+        display: block;
+    }
+
+    .nav-right .nav-link {
+        width: 100%;
+        text-align: center;
+        padding: var(--spacing-4) 0;
+        font-size: var(--font-size-base);
     }
 }
 
@@ -1698,27 +1786,40 @@ section {
 
     .hero {
         padding-top: calc(80px + var(--spacing-8));
+        padding-bottom: var(--spacing-20);
+        min-height: auto;
     }
 
     .hero-title {
-        font-size: var(--font-size-2xl);
+        font-size: clamp(1.75rem, 10vw, 2rem);
+        line-height: 1.3;
+    }
+
+    .hero-title br {
+        display: none;
+    }
+
+    .hero-title .underline {
+        text-underline-offset: 8px;
     }
 
     .hero-cta {
         flex-direction: column;
     }
 
-    .hero-stats {
-        flex-direction: column;
-        gap: var(--spacing-4);
-    }
-
-    .stat-divider {
+    .hero-bottom {
         display: none;
     }
 
     .btn {
         width: 100%;
+    }
+
+    .fundraiser {
+        margin: var(--spacing-8) var(--spacing-4) var(--spacing-16) !important;
+        padding: var(--spacing-12) 0 !important;
+        width: calc(100% - var(--spacing-8));
+        border-radius: var(--radius-2xl);
     }
 }
 
