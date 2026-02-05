@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
     initCopyUPI();
     initMobileMenu();
+    initLightbox();
 });
 
 /**
@@ -68,14 +69,14 @@ function initSmoothScroll() {
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             const targetId = link.getAttribute('href');
-            
+
             if (targetId === '#') return;
 
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
                 e.preventDefault();
-                
+
                 const navHeight = document.getElementById('navbar').offsetHeight;
                 const targetPosition = targetElement.offsetTop - navHeight;
 
@@ -144,7 +145,7 @@ function initCopyUPI() {
         copyBtn.addEventListener('click', async () => {
             try {
                 await navigator.clipboard.writeText(upiId.textContent);
-                
+
                 // Visual feedback
                 const originalHTML = copyBtn.innerHTML;
                 copyBtn.innerHTML = `
@@ -161,7 +162,7 @@ function initCopyUPI() {
 
             } catch (err) {
                 console.error('Failed to copy UPI ID:', err);
-                
+
                 // Fallback for older browsers
                 const textArea = document.createElement('textarea');
                 textArea.value = upiId.textContent;
@@ -185,7 +186,7 @@ function initMobileMenu() {
     if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            
+
             // Animate hamburger to X
             if (navLinks.classList.contains('active')) {
                 hamburger.style.background = 'transparent';
@@ -213,7 +214,7 @@ function initMobileMenu() {
  */
 function animateProgress() {
     const progressFill = document.querySelector('.progress-fill');
-    
+
     if (progressFill) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -221,11 +222,11 @@ function animateProgress() {
                     // Get the target width from inline style
                     const targetWidth = progressFill.style.width;
                     progressFill.style.width = '0%';
-                    
+
                     setTimeout(() => {
                         progressFill.style.width = targetWidth;
                     }, 300);
-                    
+
                     observer.unobserve(entry.target);
                 }
             });
@@ -243,7 +244,7 @@ document.addEventListener('DOMContentLoaded', animateProgress);
  */
 function throttle(func, limit) {
     let inThrottle;
-    return function(...args) {
+    return function (...args) {
         if (!inThrottle) {
             func.apply(this, args);
             inThrottle = true;
@@ -259,3 +260,65 @@ console.log('%c🏠 EcoHaven', 'font-size: 24px; font-weight: bold; color: #22c5
 console.log('%cBuilding portable homes for a mobile world', 'font-size: 14px; color: #666;');
 console.log('---');
 console.log('Interested in our mission? Visit #fundraiser to support us!');
+/**
+ * Lightbox - Handles opening images/videos in a larger view
+ */
+function initLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const mediaContainer = document.getElementById('lightboxMediaContainer');
+    const title = document.getElementById('lightboxTitle');
+    const description = document.getElementById('lightboxDescription');
+    const collageItems = document.querySelectorAll('.collage-item');
+
+    if (!lightbox || !collageItems.length) return;
+
+    collageItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('img');
+            const video = item.querySelector('video');
+            const itemTitle = item.querySelector('h3').textContent;
+            const itemDesc = item.querySelector('p').textContent;
+
+            mediaContainer.innerHTML = '';
+
+            if (img) {
+                const newImg = document.createElement('img');
+                newImg.src = img.src;
+                newImg.alt = img.alt;
+                mediaContainer.appendChild(newImg);
+            } else if (video) {
+                const newVideo = document.createElement('video');
+                newVideo.src = video.querySelector('source').src;
+                newVideo.controls = true;
+                newVideo.autoplay = true;
+                mediaContainer.appendChild(newVideo);
+            }
+
+            title.textContent = itemTitle;
+            description.textContent = itemDesc;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+    });
+
+    const closeLightbox = () => {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+        mediaContainer.innerHTML = ''; // Stop video playback
+    };
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
+}
