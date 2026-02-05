@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="EcoHaven - Modular collapsible houses for construction workers. Affordable, reusable, portable housing solutions.">
+    <meta name="keywords"
+        content="modular houses, collapsible homes, portable housing, construction worker housing, affordable housing">
+    <title>EcoHaven | Modular Collapsible Housing Solutions</title>
+
+    <!-- Google Fonts - Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-text">Eco<span class="highlight">Haven</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#products" class="nav-link">The Prototype</a></li>
+                <li><a href="#features" class="nav-link">Design Vision</a></li>
+                <li><a href="#testimonials" class="nav-link">Why This Matters</a></li>
+                <li><a href="support.html" class="nav-link fundraiser-link">Back the Prototype</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                From Lab to <span class="gradient-text">Life</span>:<br>
+                Rethinking Portable Shelters
+            </h1>
+            <p class="hero-subtitle">
+                I'm a college student on a mission to solve India's construction housing crisis.
+                I've built the first prototype—now I need your help to test materials and bring this vision to the
+                streets.
+            </p>
+            <div class="hero-cta">
+                <a href="#products" class="btn btn-primary">
+                    <span>See the Prototype</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+                <a href="support.html" class="btn btn-secondary">
+                    <span>Back This Project</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">V1.0</span>
+                    <span class="stat-label">Initial Prototype</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">450+</span>
+                    <span class="stat-label">Hours in Lab</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Student Built</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- Placeholder for hero image -->
+            <div class="image-placeholder hero-placeholder">
+                <div class="placeholder-content">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                        <path d="M9 22V12h6v10" />
+                    </svg>
+                    <span>Hero Image</span>
+                    <small>Modular House Showcase</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Prototype Journey</h2>
+                <p class="section-subtitle">
+                    What started as a dorm-room sketch is now a working physical model.
+                    I'm currently refining the folding mechanics and seeking durable material alternatives.
+                </p>
+            </div>
+
+            <div class="prototype-collage">
+                <!-- Item 1: Workshop Alpha -->
+                <div class="collage-item item-wide">
+                    <span class="item-badge">Active Build</span>
+                    <div class="image-container">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                                </svg>
+                                <span>Workshop Alpha (1:1 Scale)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-overlay">
+                        <h3>The Workshop Alpha</h3>
+                        <p>Full-scale testing unit under construction.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2: Materials -->
+                <div class="collage-item">
+                    <span class="item-badge">Research</span>
+                    <div class="image-container">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                                    <path d="M2 17l10 5 10-5" />
+                                </svg>
+                                <span>Material Testing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-overlay">
+                        <h3>Aluminum Panels</h3>
+                        <p>Testing structural stress points.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Scale Model -->
+                <div class="collage-item item-tall">
+                    <span class="item-badge">Proof of Concept</span>
+                    <div class="image-container">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg>
+                                <span>1:5 Scale Model</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-overlay">
+                        <h3>Folding Mechanism</h3>
+                        <p>Verified the patented easy-fold design.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4: Blueprints -->
+                <div class="collage-item">
+                    <span class="item-badge">Engineering</span>
+                    <div class="image-container">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                                </svg>
+                                <span>Technical Drawings</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-overlay">
+                        <h3>Project Blueprints</h3>
+                        <p>Refining the electrical and plumbing nodes.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5: Field Visit -->
+                <div class="collage-item">
+                    <span class="item-badge">Field Research</span>
+                    <div class="image-container">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                                    <circle cx="8.5" cy="8.5" r="1.5" />
+                                    <polyline points="21 15 16 10 5 21" />
+                                </svg>
+                                <span>Site Visit</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-overlay">
+                        <h3>Site Interviews</h3>
+                        <p>Gaining insights from the worker community.</p>
+                    </div>
+                </div>
+
+                <!-- Item 6: Team/Dorm -->
+                <div class="collage-item">
+                    <span class="item-badge">Behind the Scenes</span>
+                    <div class="image-container">
+                        <div class="image-placeholder">
+                            <div class="placeholder-content">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path
+                                        d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A10.003 10.003 0 0012 3c1.708 0 3.32.427 4.735 1.177m2.185 2.185A10.003 10.003 0 0121 12c0 1.708-.427 3.32-1.177 4.735m-2.185 2.185A10.003 10.003 0 0112 21c-1.708 0-3.32-.427-4.735-1.177m-2.185-2.185A10.003 10.003 0 013 12c0-1.708.427-3.32 1.177-4.735m2.185-2.185A10.003 10.003 0 0112 3" />
+                                </svg>
+                                <span>Early Sketches</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-overlay">
+                        <h3>Hand Sketches</h3>
+                        <p>The very first dorm-room napkins.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Why I started this</span>
+                <h2 class="section-title">A Solution Born from Necessity</h2>
+                <p class="section-subtitle">
+                    Living in temporary tin sheds shouldn't be the norm.
+                    I've designed EcoHaven to provide dignity, safety, and a sense of home.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <path d="M12 6v6l4 2" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Quick Assembly</h3>
+                    <p class="feature-description">
+                        Set up your home in hours, not weeks. Our innovative folding
+                        mechanism requires minimal tools and expertise.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                            <path d="M2 17l10 5 10-5" />
+                            <path d="M2 12l10 5 10-5" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Fully Modular</h3>
+                    <p class="feature-description">
+                        Start small and expand as needed. Add rooms, storage units,
+                        or connect multiple units together.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Weather Resistant</h3>
+                    <p class="feature-description">
+                        Built to withstand harsh conditions. Insulated walls keep you
+                        comfortable in all seasons.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Compact Transport</h3>
+                    <p class="feature-description">
+                        Collapses to 1/10th of its size. Easily fits in standard trucks
+                        for hassle-free relocation.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 3v18" />
+                            <path d="M17 8l-5-5-5 5" />
+                            <path d="M17 16l-5 5-5-5" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Reusable Design</h3>
+                    <p class="feature-description">
+                        Built for 100+ assembly cycles. Your investment travels with you
+                        from project to project.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2a10 10 0 1010 10A10 10 0 0012 2z" />
+                            <path d="M12 6a4 4 0 100 8 4 4 0 000-8z" />
+                            <path d="M12 18v4" />
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Eco-Friendly</h3>
+                    <p class="feature-description">
+                        Made from sustainable materials with solar panel integration
+                        and rainwater harvesting options.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Video Section Placeholder -->
+            <div class="video-section">
+                <h3 class="video-title">The Prototype in Action</h3>
+                <div class="video-placeholder">
+                    <div class="placeholder-content">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="1.5">
+                            <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
+                        <span>Video Demonstration</span>
+                        <small>Workshop Assembly Process</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">The Motivation</span>
+                <h2 class="section-title">Stories That Drive the Project</h2>
+                <p class="section-subtitle">
+                    During my field research at local sites, I spoke with workers who
+                    shared their struggles with traditional temporary housing.
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div class="avatar-placeholder">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">Ramesh K.</h4>
+                            <span class="testimonial-role">Site Operative, Goregaon Site</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"In the monsoon, our current sheds leak and get incredibly hot. A folding house that is
+                            actually insulated would change everything for my family's health."</p>
+                    </div>
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div class="avatar-placeholder">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">Lata M.</h4>
+                            <span class="testimonial-role">Stay-at-home Mother, Construction Colony</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Safety is my biggest concern. Having a unit that locks properly and keeps out the dust would
+                            mean a lot for my children's safety while my husband is at work."</p>
+                    </div>
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <div class="avatar-placeholder">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5">
+                                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                                    <circle cx="12" cy="7" r="4" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">Suresh V.</h4>
+                            <span class="testimonial-role">Union Head, South Mumbai Region</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"We've seen many 'solutions' that are too expensive. What this student is trying to
+                            build—something truly portable and budget-friendly—is exactly what we need."</p>
+                    </div>
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video Endorsements -->
+            <div class="video-endorsements">
+                <h3 class="endorsements-title">Video Testimonials</h3>
+                <div class="endorsements-grid">
+                    <div class="video-placeholder small">
+                        <div class="placeholder-content">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Video Endorsement 1</span>
+                        </div>
+                    </div>
+                    <div class="video-placeholder small">
+                        <div class="placeholder-content">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Video Endorsement 2</span>
+                        </div>
+                    </div>
+                    <div class="video-placeholder small">
+                        <div class="placeholder-content">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5">
+                                <polygon points="5 3 19 12 5 21 5 3" />
+                            </svg>
+                            <span>Video Endorsement 3</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="logo">
+                        <span class="logo-text">Eco<span class="highlight">Haven</span></span>
+                    </a>
+                    <p class="footer-tagline">
+                        A student-led research project aiming to provide affordable,
+                        sustainable, and dignified housing for India's construction workforce.
+                    </p>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <span>prathikleo2020@gmail.com</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                            </svg>
+                            <span>‪+91 74995 30728‬</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Social Media</h4>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/is.it_prathik/" class="social-link" aria-label="Instagram"
+                            target="_blank">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/prathik-tuniguntla-abb4a7308/" class="social-link"
+                            aria-label="LinkedIn" target="_blank">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 EcoHaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
