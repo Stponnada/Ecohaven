@@ -487,6 +487,21 @@ h6 {
     bottom: -8px;
 }
 
+/* Active Animation */
+.mobile-menu-btn.active .hamburger {
+    background: transparent;
+}
+
+.mobile-menu-btn.active .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.mobile-menu-btn.active .hamburger::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
 /* ============================================
    Hero Section
    ============================================ */
