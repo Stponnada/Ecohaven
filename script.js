@@ -265,16 +265,19 @@ function initLightbox() {
     const mediaContainer = document.getElementById('lightboxMediaContainer');
     const title = document.getElementById('lightboxTitle');
     const description = document.getElementById('lightboxDescription');
-    const collageItems = document.querySelectorAll('.collage-item');
+    const allClickableItems = document.querySelectorAll('.collage-item, .band-item, .gallery-item');
 
-    if (!lightbox || !collageItems.length) return;
+    if (!lightbox || !allClickableItems.length) return;
 
-    collageItems.forEach(item => {
+    allClickableItems.forEach(item => {
         item.addEventListener('click', () => {
             const img = item.querySelector('img');
             const video = item.querySelector('video');
-            const itemTitle = item.querySelector('h3').textContent;
-            const itemDesc = item.querySelector('p').textContent;
+            const titleEl = item.querySelector('h3');
+            const descEl = item.querySelector('p');
+
+            const itemTitle = titleEl ? titleEl.textContent : 'EcoHaven In Action';
+            const itemDesc = descEl ? descEl.textContent : 'A moment from our journey to provide better housing.';
 
             mediaContainer.innerHTML = '';
 
@@ -294,7 +297,7 @@ function initLightbox() {
             title.textContent = itemTitle;
             description.textContent = itemDesc;
             lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            document.body.style.overflow = 'hidden';
         });
     });
 
