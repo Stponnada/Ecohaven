@@ -88,7 +88,10 @@ function initSmoothScroll() {
 
                 // Close mobile menu if open
                 const navLinks = document.getElementById('navLinks');
+                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
                 navLinks.classList.remove('active');
+                if (mobileMenuBtn) mobileMenuBtn.classList.remove('active');
+                document.body.style.overflow = '';
             }
         });
     });

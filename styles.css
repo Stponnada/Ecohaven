@@ -696,19 +696,54 @@ h6 {
 }
 
 @media (max-width: 768px) {
+    .author-arrow {
+        position: absolute;
+        top: -2%;
+        left: 5%;
+        transform: rotate(-5deg);
+        z-index: 11;
+    }
 
-    .author-arrow,
     .jayant-arrow {
-        position: static;
-        margin-bottom: 10px;
-        transform: none !important;
+        position: absolute;
+        top: -2%;
+        right: 5%;
+        left: auto;
+        bottom: auto;
+        transform: rotate(3deg);
+        z-index: 10;
+        width: auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .author-arrow span,
+    .jayant-arrow span {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+        white-space: normal;
+        text-align: center;
+        box-shadow: var(--shadow-lg);
+        display: inline-block;
+    }
+
+    .jayant-arrow span {
+        max-width: 180px;
     }
 
     .author-image-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: block;
+        /* Change from flex to keep absolute children correctly positioned */
         transform: none;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .author-img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1/1;
     }
 
     .author-arrow svg,
@@ -906,10 +941,6 @@ h6 {
         height: 200px;
     }
 
-    .author-arrow {
-        right: -40px;
-        top: -10px;
-    }
 }
 
 @keyframes scroll-mobile {
