@@ -336,10 +336,31 @@ h6 {
 
 .logo {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.logo-main {
+    display: flex;
     align-items: center;
     gap: var(--spacing-2);
+}
+
+.logo-subtitle {
+    font-size: 8px;
+    font-weight: var(--font-semibold);
+    color: var(--text-secondary);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: -2px;
+    line-height: 1;
+}
+
+.logo-text {
     font-size: var(--font-size-3xl);
     font-weight: var(--font-bold);
+    color: #000000;
 }
 
 .logo-img {
@@ -347,20 +368,10 @@ h6 {
     width: auto;
 }
 
-/* Remove the previous absolute positioning */
 .navbar .logo {
     position: static;
     left: auto;
     transform: none;
-}
-
-.logo-icon {
-    font-size: var(--font-size-2xl);
-}
-
-.logo-text {
-    color: #000000;
-    /* Pure black for "Eco" */
 }
 
 .logo-text .highlight {
@@ -519,6 +530,79 @@ h6 {
 .mobile-menu-btn.active .hamburger::after {
     bottom: 0;
     transform: rotate(-45deg);
+}
+
+/* ============================================
+   Announcement Ribbon
+   ============================================ */
+.announcement-ribbon {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background-color: var(--primary-600);
+    color: white;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    z-index: 299;
+    /* Just below navbar (300) */
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.ribbon-track {
+    display: flex;
+    white-space: nowrap;
+    animation: ribbonMarquee 20s linear infinite;
+    will-change: transform;
+}
+
+.ribbon-content {
+    display: flex;
+    align-items: center;
+}
+
+.ribbon-item {
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.ribbon-separator {
+    margin: 0 1rem;
+    opacity: 0.5;
+}
+
+@keyframes ribbonMarquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Adjust page content to account for the ribbon */
+body {
+    padding-top: 36px;
+    /* Offset for the fixed ribbon added to the 80px navbar */
+}
+
+@media (max-width: 768px) {
+    .announcement-ribbon {
+        top: 80px;
+        height: 32px;
+    }
+
+    body {
+        padding-top: 32px;
+    }
 }
 
 /* ============================================
@@ -2145,7 +2229,7 @@ section {
     }
 
     .hero {
-        padding-top: calc(80px + var(--spacing-8));
+        padding-top: calc(112px + var(--spacing-8));
         padding-bottom: var(--spacing-20);
         min-height: auto;
     }
