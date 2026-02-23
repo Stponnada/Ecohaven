@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Haven 2 - The next generation of EcoHaven housing.">
+    <title>Haven 2 | EcoHaven</title>
+
+    <!-- Google Fonts - Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-main">
+                    <img src="assets/Logo_notext.svg" alt="EcoHaven Logo" class="logo-img">
+                    <span class="logo-text">Eco<span class="highlight">Haven</span></span>
+                </div>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#home" class="nav-link">Mission</a></li>
+                <li><a href="index.html#growth" class="nav-link">Growth</a></li>
+                <li><a href="index.html#vision" class="nav-link">Vision</a></li>
+                <li><a href="support.html" class="nav-link fundraiser-link">Help us Grow</a></li>
+            </ul>
+
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="haven2-teaser">
+        <div class="teaser-background">
+            <div class="teaser-overlay"></div>
+        </div>
+        <div class="teaser-content">
+            <div class="teaser-badge">Coming Soon</div>
+            <h1 class="teaser-title">Haven 2</h1>
+            <p class="teaser-subtitle">Launching on March 26</p>
+            <div class="teaser-divider"></div>
+            <p class="teaser-message">The wait will be worth it.</p>
+            <div class="teaser-cta">
+                <a href="index.html" class="btn btn-outline-light">Back to Mission</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">Eco<span class="highlight">Haven</span></span>
+                    </a>
+                    <p class="footer-tagline">
+                        A student-led research startup aiming to provide affordable,
+                        sustainable, and dignified housing for India's construction workforce.
+                    </p>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <span>prathikleo2020@gmail.com</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+                            </svg>
+                            <span>‪+91 74995 30728‬</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 EcoHaven. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector('.haven2-teaser').addEventListener('contextmenu', (e) => e.preventDefault());
+    </script>
+
+    <script type="module" src="/script.js"></script>
+</body>
+
+</html>
