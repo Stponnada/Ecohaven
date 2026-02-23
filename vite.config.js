@@ -13,7 +13,8 @@ export default defineConfig({
         rollupOptions: {
             input: {
                 main: './index.html',
-                support: './support.html'
+                support: './support.html',
+                haven2: './haven2.html'
             }
         }
     }
