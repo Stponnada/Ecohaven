@@ -21,27 +21,44 @@
 </head>
 
 <body>
+    <!-- Welcome Intro Section -->
+    <section class="welcome-intro">
+        <div class="welcome-background">
+            <img src="assets/EcoHavenBackground.png" alt="EcoHaven Field Background">
+            <!-- Subtle warped branded sky element -->
+            <div class="sky-warp">
+                <svg viewBox="0 0 1000 400" preserveAspectRatio="xMidYMid slice">
+                    <path id="mountainPath" d="M 50,350 Q 500,50 950,350" fill="transparent" />
+                    <text class="warped-text">
+                        <textPath href="#mountainPath" startOffset="50%" text-anchor="middle">
+                            ECOHAVEN
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
+        </div>
+        <div class="welcome-content">
+            <h1 class="welcome-heading">The new standard for portable havens.</h1>
+            <p class="welcome-subheading">A modular, collapsible housing system designed to provide dignity and safety
+                to construction workers, anywhere in the world.</p>
+            <a href="#home" class="welcome-cta">Get started</a>
+        </div>
+    </section>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <ul class="nav-links nav-left">
-                <li><a href="#home" class="nav-link active">Mission</a></li>
-                <li><a href="#growth" class="nav-link">Growth</a></li>
-                <li><a href="#vision" class="nav-link">Vision</a></li>
-            </ul>
-
             <a href="index.html" class="logo">
                 <div class="logo-main">
                     <img src="assets/Logo_notext.svg" alt="EcoHaven Logo" class="logo-img">
                     <span class="logo-text">Eco<span class="highlight">Haven</span></span>
                 </div>
-                <span class="logo-subtitle">3d Printed Modular Housing</span>
             </a>
 
-            <ul class="nav-links nav-right" id="navLinks">
-                <li class="mobile-only"><a href="#home" class="nav-link active">Mission</a></li>
-                <li class="mobile-only"><a href="#growth" class="nav-link">Growth</a></li>
-                <li class="mobile-only"><a href="#vision" class="nav-link">Vision</a></li>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active">Mission</a></li>
+                <li><a href="#growth" class="nav-link">Growth</a></li>
+                <li><a href="#vision" class="nav-link">Vision</a></li>
                 <li><a href="support.html" class="nav-link fundraiser-link">Help us Grow</a></li>
             </ul>
 
@@ -50,32 +67,6 @@
             </button>
         </div>
     </nav>
-
-    <!-- Announcement Ribbon -->
-    <div class="announcement-ribbon">
-        <div class="ribbon-track">
-            <div class="ribbon-content">
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-            </div>
-            <div class="ribbon-content">
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-                <div class="ribbon-item">HAVEN 2 - Launching in March!</div>
-            </div>
-        </div>
-    </div>
 
     <!-- Hero Section (Mission) -->
     <section class="hero" id="home">

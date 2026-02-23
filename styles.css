@@ -312,33 +312,35 @@ h6 {
    ============================================ */
 .navbar {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #f7f4f0;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    max-width: 95%;
+    background: rgba(247, 244, 240, 0.4);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     z-index: var(--z-fixed);
-    border-bottom: 1px solid var(--neutral-200);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 9999px;
     transition: all var(--transition-base);
+    box-shadow: 0 8px 32px -8px rgba(0, 0, 0, 0.12);
 }
 
 .nav-container {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: var(--spacing-2) var(--spacing-8);
-    gap: var(--spacing-8);
-    height: 80px;
+    padding: 0 28px 0 20px;
+    height: 64px;
+    gap: 40px;
 }
 
 .logo {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 0;
+    gap: var(--spacing-2);
 }
 
 .logo-main {
@@ -348,62 +350,35 @@ h6 {
 }
 
 .logo-subtitle {
-    font-size: 8px;
-    font-weight: var(--font-semibold);
-    color: var(--text-secondary);
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    margin-top: -2px;
-    line-height: 1;
+    display: none;
+    /* Hide subtitle for cleaner pill look */
 }
 
 .logo-text {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
     font-weight: var(--font-bold);
     color: #000000;
 }
 
 .logo-img {
-    height: 40px;
+    height: 32px;
     width: auto;
-}
-
-.navbar .logo {
-    position: static;
-    left: auto;
-    transform: none;
-}
-
-.logo-text .highlight {
-    color: #000000;
-    /* Pure black for "Haven" */
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: var(--spacing-8);
+    gap: var(--spacing-6);
     list-style: none;
 }
 
-.nav-left {
-    grid-column: 1;
-    justify-content: flex-start;
-}
-
-.nav-right {
-    grid-column: 3;
-    justify-content: flex-end;
-}
-
 .nav-link {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     font-weight: var(--font-medium);
     color: var(--text-primary);
-    transition: color var(--transition-base);
+    transition: all var(--transition-base);
     white-space: nowrap;
-    position: relative;
-    padding: var(--spacing-2) 0;
+    padding: var(--spacing-2) var(--spacing-1);
 }
 
 .nav-link:hover {
@@ -416,45 +391,25 @@ h6 {
 
 /* Reference-style CTA Button (Pill shape) */
 .fundraiser-link {
-    background: var(--text-primary);
-    /* Dark earthy brown */
+    background: #1a1a1a !important;
     color: var(--text-light) !important;
-    padding: var(--spacing-2) var(--spacing-6) !important;
-    border-radius: var(--radius-full);
-    font-size: var(--font-size-xs) !important;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    padding: 12px 28px !important;
+    border-radius: 9999px !important;
+    font-size: var(--font-size-sm) !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
     font-weight: var(--font-bold);
-    transition: all var(--transition-base) !important;
-    box-shadow: var(--shadow-sm);
+    box-shadow: none !important;
 }
 
 .fundraiser-link:hover {
-    background: var(--primary-600);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    background: #000000 !important;
+    transform: none !important;
 }
 
 .nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--gradient-primary);
-    border-radius: var(--radius-full);
-    transition: width var(--transition-base);
-}
-
-.nav-link:hover,
-.nav-link.active {
-    color: var(--primary-700);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-    width: 100%;
+    display: none;
+    /* Remove underline for cleaner look */
 }
 
 .nav-link.fundraiser-link {
@@ -533,76 +488,191 @@ h6 {
 }
 
 /* ============================================
-   Announcement Ribbon
+   Welcome Intro Section
    ============================================ */
-.announcement-ribbon {
-    position: fixed;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background-color: var(--primary-600);
-    color: white;
-    height: 36px;
+.welcome-intro {
+    position: relative;
+    width: 100%;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    z-index: 299;
-    /* Just below navbar (300) */
+    text-align: center;
     overflow: hidden;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    font-size: var(--font-size-xs);
-    font-weight: var(--font-bold);
+    background-color: #f7f4f0;
+}
+
+.welcome-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.sky-warp {
+    position: absolute;
+    top: 2%;
+    /* Slightly down from 0 to ensure peak of arc is visible */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.35;
+    mix-blend-mode: soft-light;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 1024px) {
+    .sky-warp {
+        top: -10%;
+        /* Move it up significantly only on desktop */
+    }
+}
+
+.sky-warp svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.warped-text {
+    font-family: var(--font-family);
+    font-size: 56px;
+    font-weight: 800;
+    fill: #000000;
+    letter-spacing: 1em;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
 }
 
-.ribbon-track {
-    display: flex;
-    white-space: nowrap;
-    animation: ribbonMarquee 20s linear infinite;
-    will-change: transform;
+.welcome-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    /* Focus on the horizon */
+    transition: transform 10s ease-out;
 }
 
-.ribbon-content {
-    display: flex;
+.welcome-intro:hover .welcome-background img {
+    transform: scale(1.05);
+    /* Subtle zoom effect */
+}
+
+.welcome-background::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(247, 244, 240, 0) 0%,
+            rgba(247, 244, 240, 0) 75%,
+            rgba(247, 244, 240, 0.6) 92%,
+            rgb(247, 244, 240) 100%);
+}
+
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 var(--spacing-6) 12vh;
+    animation: welcomeFadeIn 1.5s ease-out;
+}
+
+@keyframes welcomeFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.welcome-heading {
+    font-size: clamp(2.5rem, 6vw, 4.8rem);
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: var(--spacing-6);
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    text-shadow: 0 2px 20px rgba(255, 255, 255, 0.4);
+}
+
+.welcome-subheading {
+    font-size: clamp(1.1rem, 1.4vw, 1.4rem);
+    color: #222222;
+    margin-bottom: var(--spacing-10);
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+    font-weight: 500;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.welcome-cta {
+    display: inline-flex;
     align-items: center;
+    gap: var(--spacing-2);
+    background: #1a1a1a;
+    color: white;
+    padding: 16px 40px;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-.ribbon-item {
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
+.welcome-cta:hover {
+    background: #000000;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.ribbon-separator {
-    margin: 0 1rem;
-    opacity: 0.5;
+.welcome-cta::after {
+    content: '→';
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
 }
 
-@keyframes ribbonMarquee {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* Adjust page content to account for the ribbon */
-body {
-    padding-top: 36px;
-    /* Offset for the fixed ribbon added to the 80px navbar */
-}
-
-@media (max-width: 768px) {
-    .announcement-ribbon {
-        top: 80px;
-        height: 32px;
-    }
-
-    body {
-        padding-top: 32px;
-    }
+.welcome-cta:hover::after {
+    transform: translateX(4px);
 }
 
 /* ============================================
@@ -1584,13 +1654,28 @@ section {
    Fundraiser Section
    ============================================ */
 .fundraiser {
-    background: var(--gradient-primary);
+    background: linear-gradient(145deg, #14532d 0%, #166534 50%, #15803d 100%);
     color: var(--text-light);
     border-radius: var(--radius-3xl);
     margin: var(--spacing-16) auto var(--spacing-24);
-    padding: var(--spacing-16) 0;
+    padding: var(--spacing-20) 0;
     max-width: 1200px;
     width: calc(100% - var(--spacing-12));
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15), 0 0 100px rgba(16, 185, 129, 0.1);
+}
+
+.fundraiser::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 10% 20%, rgba(34, 197, 94, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(34, 197, 94, 0.1) 0%, transparent 40%);
+    pointer-events: none;
 }
 
 .fundraiser-wrapper {
@@ -1695,21 +1780,24 @@ section {
 }
 
 .donation-section {
-    background: rgba(255, 255, 255, 0.12);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     border-radius: var(--radius-3xl);
-    padding: var(--spacing-12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 50px rgba(34, 197, 94, 0.1);
-    margin-top: var(--spacing-10);
-    transition: all var(--transition-base);
+    padding: var(--spacing-16) var(--spacing-12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+    margin-top: var(--spacing-12);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .donation-section:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3), 0 0 70px rgba(34, 197, 94, 0.2);
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 45px 90px rgba(0, 0, 0, 0.35),
+        0 0 50px rgba(34, 197, 94, 0.2);
 }
 
 .donation-title {
@@ -2083,30 +2171,33 @@ section {
 }
 
 @media (max-width: 768px) {
+    .navbar {
+        top: 12px;
+        width: calc(100% - 24px);
+    }
+
     .nav-container {
-        display: flex;
-        justify-content: space-between;
+        padding: 0 16px 0 12px;
+        height: 56px;
     }
 
-    .nav-left {
-        display: none !important;
-    }
-
-    .nav-right {
+    .nav-links {
         display: none;
         position: absolute;
-        top: 100%;
+        top: calc(100% + 8px);
         left: 0;
         right: 0;
         flex-direction: column;
-        background: var(--bg-primary);
+        background: rgba(247, 244, 240, 0.95);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
         padding: var(--spacing-6);
         gap: var(--spacing-4);
-        border-bottom: 1px solid var(--neutral-200);
+        border-radius: var(--radius-2xl);
+        border: 1px solid rgba(0, 0, 0, 0.05);
         box-shadow: var(--shadow-lg);
     }
 
-    /* Target both links lists on mobile if needed, but usually we combine them */
     .nav-links.active {
         display: flex;
     }
@@ -2215,7 +2306,7 @@ section {
         display: block;
     }
 
-    .nav-right .nav-link {
+    .nav-links .nav-link {
         width: 100%;
         text-align: center;
         padding: var(--spacing-4) 0;
@@ -2423,18 +2514,37 @@ section {
 .supporter-card {
     display: flex;
     align-items: center;
-    gap: var(--spacing-3);
-    padding: var(--spacing-4) var(--spacing-5);
-    background: white;
-    border-radius: var(--radius-xl);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    transition: all var(--transition-base);
+    gap: var(--spacing-4);
+    padding: var(--spacing-5) var(--spacing-6);
+    background: #ffffff;
+    border-radius: var(--radius-2xl);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
 }
 
 .supporter-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
     border-color: rgba(34, 197, 94, 0.2);
+}
+
+.supporter-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary-500);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.supporter-card:hover::before {
+    opacity: 1;
 }
 
 .supporter-icon {
